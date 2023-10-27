@@ -3,9 +3,8 @@
 #include <strings.h>
 #include <time.h>
 
-// where is memo ???
-double long Fm[500];
-clock_t tm; // to calc compute time
+double long Fm[500];    //holds all calculated numbers
+clock_t tm;             // to calc compute time
 
 int Fib(int fcount){
     
@@ -14,19 +13,17 @@ int Fib(int fcount){
     
     tm = clock();  //start timer...
 
-    // check if this is already calculated...
-    if ((Fm[fcount - 1]) < 1) {     // not done yet
+    // check if numbers are already calculated...
+    if ((Fm[fcount - 1]) < 1) {    
         Fm[0] = 0;
         Fm[1] = 1;
         
         for (i = 2; i < fcount; i++){
-
             Fm[i] = (Fm[i - 2]) + (Fm[i-1]);
         }
-        //char buffIt[] = "test";
     }
-        tm = clock() - tm;
-        double time_taken = ((double)tm)/CLOCKS_PER_SEC; // calculate the elapsed time
+        tm = clock() - tm;      // calculate  elapsed time
+        double time_taken = ((double)tm)/CLOCKS_PER_SEC; 
         printf("The program took %f seconds to execute", time_taken);
 
     printf("Here are %i Fibs:\n", fcount);
@@ -37,12 +34,14 @@ int Fib(int fcount){
     return 0 ;
 }
 int main(){
+    
     int totalFibs = 0;
-    printf("\nHow many Fibs? ( < 90)\n");
+    
+    printf("\nHow many Fibs would you like? ( < 90)\n");
     scanf("%i", &totalFibs);
     
     if (totalFibs < 90){
-        Fib(totalFibs);
+        Fib(totalFibs);     //calculate and print out
     }
     else {
         printf("\n you messed up.");
