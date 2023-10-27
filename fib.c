@@ -30,13 +30,27 @@ int Fib(int fcount){
 }
 int main(){
     int totalFibs = 0;
-    printf("\nHow many Fibs?\n");
+    printf("\nHow many Fibs? ( < 90)\n");
     scanf("%i", &totalFibs);
-    Fib(totalFibs);
+    
+    if (totalFibs < 90){
+        Fib(totalFibs);
+    }
+    else {
+        printf("\n you messed up.");
+        return 0;
+    }
+
     printf("\nsecond time through, enter Fibs!\n\n");
     totalFibs = 0;  //reset
     scanf("%i", &totalFibs);
-    Fib(totalFibs);
+    if (totalFibs < 90){
+        Fib(totalFibs);
+    }
+    else {
+        printf("\n you messed up.");
+        return 0;
+    }
 
 return 0;
 }
