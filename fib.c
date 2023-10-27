@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <time.h>
 
 // where is memo ???
 double long Fm[500];
+clock_t tm; // to calc compute time
 
 int Fib(int fcount){
     
     int count;
     int i;
     
+    tm = clock();  //start timer...
+
     // check if this is already calculated...
     if ((Fm[fcount - 1]) < 1) {     // not done yet
         Fm[0] = 0;
@@ -21,6 +25,10 @@ int Fib(int fcount){
         }
         //char buffIt[] = "test";
     }
+        tm = clock() - tm;
+        double time_taken = ((double)tm)/CLOCKS_PER_SEC; // calculate the elapsed time
+        printf("The program took %f seconds to execute", time_taken);
+
     printf("Here are %i Fibs:\n", fcount);
     for (i = 0; i < fcount; i++) {
         //itoa((int)Fm[i], buffIt, 10);
