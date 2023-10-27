@@ -28,7 +28,7 @@ int Fib(int fcount){
 
     printf("Here are %i Fibs:\n", fcount);
     for (i = 0; i < fcount; i++) {
-        //itoa((int)Fm[i], buffIt, 10);
+
         printf("Fib[%d] is %llu \n", i, (unsigned long long) Fm[i]);
     }
     return 0 ;
