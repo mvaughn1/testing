@@ -3,7 +3,7 @@
 #include <strings.h>
 #include <time.h>
 
-double long Fm[500];    //holds all calculated numbers
+double long Fm[90];    //holds all calculated numbers
 clock_t tm;             // to calc compute time
 
 int Fib(int fcount){
@@ -24,7 +24,7 @@ int Fib(int fcount){
     }
         tm = clock() - tm;      // calculate  elapsed time
         double time_taken = ((double)tm)/CLOCKS_PER_SEC; 
-        printf("The program took %f seconds to execute", time_taken);
+        printf("The program took %f seconds to execute\n", time_taken);
 
     printf("Here are %i Fibs:\n", fcount);
     for (i = 0; i < fcount; i++) {
